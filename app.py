@@ -12,7 +12,8 @@ def home():
 
 @app.route("/getData", methods=['GET', 'POST'])
 def get_data():
-    content = file_get_contents("http://neocando.case.edu/cando/housingReport/lbxml.jsp?parcel=109-02-088")
+    XMLstreamUrl = request.args.get('XMLstreamUrl')
+    content = file_get_contents(XMLstreamUrl)
     content_dict = xmltodict.parse(content.strip())
     return jsonify(content_dict)
 

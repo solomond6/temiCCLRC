@@ -82,6 +82,9 @@
   $.ajax({
       type: 'GET',
       url:'/getData',
+      data:{
+        XMLstreamUrl: 'http://neocando.case.edu/cando/housingReport/lbxml.jsp?parcel=109-21-100'
+      },
       success: function(data){
           resp = data.lbstream.parcelid.source;
 
